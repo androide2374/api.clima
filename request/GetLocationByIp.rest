@@ -1,0 +1,1 @@
+GET http://localhost:3001/api/GetLocationIp/190.55.132.72
