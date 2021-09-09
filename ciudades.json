@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "description": "Ciudad de Buenos Aires"
+    },
+    {
+        "id": 2,
+        "description": "Lomas de Zamora, Buenos Aires"
+    },
+    {
+        "id": 3,
+        "description": "San Justo, Buenos Aires"
+    },
+    {
+        "id": 4,
+        "description": "Moron, Buenos Aires"
+    },
+    {
+        "id": 5,
+        "description": "La Plata, Buenos Aires"
+    }
+]
