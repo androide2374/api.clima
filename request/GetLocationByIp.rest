@@ -1,1 +1,1 @@
-GET http://localhost:3001/v1/GetLocationIp/190.55.132.72
+GET http://localhost:3001/v1/GetLocationIp/190.55.251.161
