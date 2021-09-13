@@ -1,41 +1,58 @@
 const express = require('express')
-const GetLocationIp = express.Router()
+const location = express.Router()
 
 const axios = require('axios')
 
-const API_KEY_WEATHER =
-  process.env.API_KEY || '212b49dc91ea1c61dad9b96abb1c004d'
+location.get('/location/:ip', async (req, response) => {
+  const res = await axios.get(`http://ip-api.com/json/${req.params.ip}`)
 
-GetLocationIp.get('/GetLocationIp/:ip', async (request, response) => {
-  const res = await axios.get('http://ip-api.com/json/')
-  // const { regionName, city } = res.data
   response.setHeader('Content-Type', 'application/json')
   response.send(JSON.stringify(res.data))
 })
 
-GetLocationIp.get('/GetWeatherIp/', async (req, res) => {
-  const dataip = await axios.get('http://ip-api.com/json/')
-  const { lon, lat } = dataip.data
+// // GetLocationIp.get('/GetWeatherIp/', async (req, res) => {
+// //   const dataip = await axios.get('http://ip-api.com/json/')
+// //   const { lon, lat } = dataip.data
 
-  console.log({ lon, lat })
+// //   console.log({ lon, lat })
 
-  try {
-    const weatherdata = await axios.get(
-      `http://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${lon}&cnt=1&appid=${API_KEY_WEATHER}`
-    )
-    const data = weatherdata.data
+// //   try {
+// //     const weatherdata = await axios.get(
+// //       `http://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${lon}&cnt=1&appid=${API_KEY_WEATHER}`
+// //     )
+// //     const data = weatherdata.data
 
-    const { list } = data
+// //     const { list } = data
 
-    console.log(list)
+// //     console.log(list)
 
-    res.setHeader('Content-Type', 'application/json')
+// //     res.setHeader('Content-Type', 'application/json')
 
-    res.status(200).json(data)
-  } catch (error) {
-    res.status(404)
-    console.log(error)
-  }
-})
+// //     res.status(200).json(data)
+// //   } catch (error) {
+// //     res.status(404)
+// //     console.log(error)
+// //   }
+// // })
 
-module.exports = GetLocationIp
+// // GetLocationIp.get('/GetWeatherIp/:city', async (req, res) => {
+// //   const { city } = req.params
+
+// //   const weatherdata = await axios
+// //     .get(
+// //       `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY_WEATHER}`
+// //     )
+// //     .catch((error) => res.status(404).json(error))
+// //   if (weatherdata) {
+// //     const { data } = weatherdata
+// //     if (data.cod === 200) {
+// //       res.setHeader('Content-Type', 'application/json')
+// //       res.status(200).json(data)
+// //     }
+// //   }
+// //   // } catch (error) {
+// //   //   res.status(404).end(JSON.stringify(error.message))
+// //   // }
+// })
+
+module.exports = location

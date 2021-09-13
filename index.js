@@ -9,6 +9,8 @@ app.use(express.json())
 app.use('/v1', require('./controllers/city'))
 app.use('/v1', require('./controllers/getLocationIp'))
 
+app.use('/v1', require('./controllers/weather'))
+
 app.use((request, response) => {
   response.status(404).json({ error: `EndPoint no encontrado ${request.path}` })
 })
