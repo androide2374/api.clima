@@ -17,7 +17,7 @@ weather.get('/current/:city?', async (req, res) => {
   }
   await axios
     .get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY_WEATHER}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=es&appid=${API_KEY_WEATHER}`
     )
     .then((response) => {
       if (response.data.cod === 200) {
