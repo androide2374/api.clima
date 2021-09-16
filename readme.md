@@ -4,5 +4,8 @@ Yarn add
 o en su defecto
 npm install
 
-para ejecutar el proyecto
+para ejecutar el proyecto modo productivo
 yarn start || npm run start
+
+para ejecutar el proyecto modo desarrollo
+yarn dev || npm run dev
