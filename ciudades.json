@@ -1,22 +1,27 @@
-[
-    {
-        "id": 1,
-        "description": "Ciudad de Buenos Aires"
-    },
-    {
-        "id": 2,
-        "description": "Lomas de Zamora, Buenos Aires"
-    },
-    {
-        "id": 3,
-        "description": "San Justo, Buenos Aires"
-    },
-    {
-        "id": 4,
-        "description": "Moron, Buenos Aires"
-    },
-    {
-        "id": 5,
-        "description": "La Plata, Buenos Aires"
-    }
-]
+{
+  "Lomas de Zamora": {
+    "name": "Lomas de Zamora",
+    "lon": -58.406319,
+    "lat": -34.76088
+  },
+  "Ciudad Autónoma de Buenos Aires": {
+    "name": "Ciudad Autónoma de Buenos Aires",
+    "lon": -58.78326,
+    "lat": -30.954651
+  },
+  "Tigre": {
+    "name": "Tigre",
+    "lon": -58.57962,
+    "lat": -34.426029
+  },
+  "La Plata": {
+    "name": "La Plata",
+    "lon": -57.954529,
+    "lat": -34.921452
+  },
+  "Quilmes": {
+    "name": "Quilmes",
+    "lon": -58.252651,
+    "lat": -34.724178
+  }
+}
