@@ -1,6 +1,3 @@
-const express = require('express')
-const weather = express.Router()
-
 const ciudades = require('../ciudades.json')
 
 const axios = require('axios')
@@ -8,7 +5,7 @@ const API_KEY_WEATHER =
   process.env.API_KEY || '212b49dc91ea1c61dad9b96abb1c004d'
 const PORT = process.env.PORT || 3001
 
-weather.get('/current/:city?', async (req, res) => {
+const getCurrent = async (req, res) => {
   let coords = {}
 
   if (req.params.city) {
@@ -37,9 +34,9 @@ weather.get('/current/:city?', async (req, res) => {
 
     res.status(404).json(response)
   }
-})
+}
 
-weather.get('/forecast/:city?', async (req, res) => {
+const getForecast = async (req, res) => {
   let coords = {}
   let scity = ''
 
@@ -72,6 +69,5 @@ weather.get('/forecast/:city?', async (req, res) => {
 
     res.status(404).json(response)
   }
-})
-
-module.exports = weather
+}
+module.exports = { getCurrent, getForecast }

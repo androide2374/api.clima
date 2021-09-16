@@ -6,10 +6,8 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-app.use('/v1', require('./controllers/city'))
-app.use('/v1', require('./controllers/getLocationIp'))
-
-app.use('/v1', require('./controllers/weather'))
+app.use('/v1', require('./routes/weather.routes'))
+app.use('/v1', require('./routes/location.routes'))
 
 app.use((request, response) => {
   response.status(404).json({ error: `EndPoint no encontrado ${request.path}` })
