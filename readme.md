@@ -10,3 +10,5 @@ para ejecutar el proyecto modo productivo
 para ejecutar el proyecto modo desarrollo
 ## yarn dev || npm run dev
 tiene hotreload
+
+## El servicio corre en http://localhost:3001/v1
